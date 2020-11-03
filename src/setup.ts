@@ -747,7 +747,9 @@ async function setupMiniconda(
           null;
         if (environmentExplicit) {
           environmentYaml = {};
+          utils.consoleLog("Found EXPLICIT env spec...");
         } else {
+          utils.consoleLog("no EXPLICIT env spec...");
           environmentYaml = yaml.safeLoad(
             fs.readFileSync(sourceEnvironmentPath, "utf8")
           );
